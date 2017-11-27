@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/sem" useHttpOnly="true">
+
+    <Resource driverClassName="org.postgresql.Driver" maxTotal="100"
+              maxActive="20" maxIdle="10" maxWait="-1" maxWaitMillis="5000" name="jdbc/sem" username="postgres"
+              password="postgres" type="javax.sql.DataSource" url="jdbc:postgresql://localhost:5432/sem"
+              validationQuery="SELECT 1"/>
+
+    <Realm className="org.apache.catalina.realm.CombinedRealm">
+        <Realm className="org.apache.catalina.realm.JDBCRealm"
+               driverName="org.postgresql.Driver" digest="MD5"
+               connectionURL="jdbc:postgresql://localhost:5432/sem"
+               connectionName="postgres"
+               connectionPassword="postgres"
+               userTable="users" userNameCol="login" userCredCol="password"
+               userRoleTable="users_to_roles" roleNameCol="role_name" />
+        <Realm className="org.apache.catalina.realm.JDBCRealm"
+               driverName="org.postgresql.Driver"
+               connectionURL="jdbc:postgresql://localhost:5432/sem"
+               connectionName="postgres"
+               connectionPassword="postgres"
+               userTable="users" userNameCol="email" userCredCol="uuid"
+               userRoleTable="users_to_roles" roleNameCol="role_name" />
+    </Realm>
+
+</Context>

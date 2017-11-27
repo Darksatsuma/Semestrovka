@@ -1,0 +1,5 @@
+/home/dmitry/IdeaProjects/sem/src/main/java/models/pojo/User.java
+/home/dmitry/IdeaProjects/sem/src/main/java/controllers/RegisterServlet.java
+/home/dmitry/IdeaProjects/sem/src/main/java/utils/dao/UserDAO.java
+/home/dmitry/IdeaProjects/sem/src/main/java/controllers/LoginServlet.java
+/home/dmitry/IdeaProjects/sem/src/main/java/utils/ConnectionManager.java
